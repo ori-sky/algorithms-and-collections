@@ -26,7 +26,6 @@ public class Sequence<E> {
         this(10);
     }
 
-    @SuppressWarnings("unchecked")
     public Sequence(int capacity) {
         /* eww, type safety violation
          * but type variables can't be instantiated directly due to type erasure
@@ -39,7 +38,12 @@ public class Sequence<E> {
     }
 
     public void append(E element) {
-
+        if(_size >= _data.length) {
+            E[] tmp = _data;
+            _data = (E[])new Object[_size + 1];
+            System.arraycopy(tmp, 0, _data, 0, tmp.length);
+        }
+        _data[_size++] = element;
     }
 
     public E get(int k) throws IndexOutOfBoundsException {
@@ -51,7 +55,7 @@ public class Sequence<E> {
     }
 
     public void set(int k, E newElement) throws IndexOutOfBoundsException {
-        if(k < size()) {
+        if(k < _size) {
             _data[k] = newElement;
         } else {
             throw new IndexOutOfBoundsException();
