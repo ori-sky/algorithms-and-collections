@@ -15,7 +15,8 @@
 */
 
 public class EmptySequence<E> implements Sequence<E> {
-    public static <T> EmptySequence<T> empty() { return new EmptySequence(); }
+    private static final EmptySequence _empty = new EmptySequence();
+    public static <T> EmptySequence<T> empty() { return _empty; }
     private EmptySequence() {}
 
     @Override
