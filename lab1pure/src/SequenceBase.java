@@ -1,5 +1,5 @@
 /*
-* Copyright 2014 David Farrell <shokku.ra@gmail.com>
+* Copyright 2014 David Farrell
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,9 +14,7 @@
 * limitations under the License.
 */
 
-public class Main {
-    public static void main(String[] args) throws EmptySequenceException {
-        SequenceBase s = EmptySequence.empty().seq(5).seq(2).seq(3);
-        System.out.println("head=" + s.head());
-    }
+public interface SequenceBase<E> {
+    public SequenceBase seq(E elem);
+    public E head() throws EmptySequenceException;
 }

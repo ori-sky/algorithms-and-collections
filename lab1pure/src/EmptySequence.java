@@ -14,14 +14,14 @@
 * limitations under the License.
 */
 
-public class EmptySequence<E> implements Sequence<E> {
+public class EmptySequence<E> implements SequenceBase<E> {
     private static final EmptySequence _empty = new EmptySequence();
     public static <T> EmptySequence<T> empty() { return _empty; }
     private EmptySequence() {}
 
     @Override
-    public Sequence seq(E elem) {
-        return new PureSequence(elem, this);
+    public SequenceBase seq(E elem) {
+        return new Sequence(elem, this);
     }
 
     @Override
