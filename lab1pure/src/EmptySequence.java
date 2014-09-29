@@ -28,4 +28,9 @@ public class EmptySequence<E> implements SequenceBase<E> {
     public E head() throws EmptySequenceException {
         throw new EmptySequenceException();
     }
+
+    @Override
+    public SequenceBase tail() throws EmptySequenceException {
+        throw new EmptySequenceException();
+    }
 }

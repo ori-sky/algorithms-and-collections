@@ -32,4 +32,9 @@ public class Sequence<E> implements SequenceBase<E> {
     public E head() {
         return elem;
     }
+
+    @Override
+    public SequenceBase tail() {
+        return xs;
+    }
 }

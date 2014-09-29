@@ -17,6 +17,7 @@
 public class Main {
     public static void main(String[] args) throws EmptySequenceException {
         SequenceBase s = EmptySequence.empty().seq(5).seq(2).seq(3);
-        System.out.println("head=" + s.head());
+        System.out.println("head = " + s.head());
+        System.out.println("head of tail = " + s.tail().head());
     }
 }

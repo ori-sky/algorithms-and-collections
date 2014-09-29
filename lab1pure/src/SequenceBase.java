@@ -17,4 +17,5 @@
 public interface SequenceBase<E> {
     public SequenceBase seq(E elem);
     public E head() throws EmptySequenceException;
+    public SequenceBase tail() throws EmptySequenceException;
 }
